@@ -301,7 +301,7 @@ footer a:focus {
 	flex-direction: column;
 }
 
-.footer-links__list > * {
+footer .footer-links__list > * {
 	margin: 1rem 0 0 0;
 }
 
@@ -392,7 +392,7 @@ footer {
 		flex-direction: row;	
 	}
 
-	.footer-links__list * {
+	footer .footer-links__list * {
 		margin: 0 0 0 calc(1rem + 1vw);
 	
 	}
