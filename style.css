@@ -1,0 +1,405 @@
+/*  =================
+css reset
+===================  */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+/* Set core body defaults */
+body {
+	min-height: 100vh;
+	line-height: 1.6;
+	text-rendering: optimizeSpeed;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+dl,
+dt,
+dd,
+figure,
+blockquote {
+	margin: 0;
+}
+
+/* tightens line-heights on headings and titles using headings as a class name */
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4 {
+	line-height: 1;
+}
+
+/* Remove list styles & padding on ul & ol elements with class names */
+ul,
+ol {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+/* removes default underline from links */
+a {
+	text-decoration: none;
+}
+
+/* allows vertical margins on links/buttons. Sets pointer. */
+a,
+button {
+	display: inline-block;
+	cursor: pointer;
+}
+
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select,
+optgroup {
+	font-family: inherit;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+	max-width: 100%;
+	display: block;
+	height: auto;
+}
+
+/*  ===================
+css reset - END
+===================== */
+
+
+/* ==============
+custom properties */
+
+:root {
+
+	--ff-bj: 'Bai Jamjuree', sans-serif;
+
+	--fs-400: 1.125rem;
+	--fs-500: 1.5rem;
+	--fs-600: 2rem;
+
+	--fw-400: 400;
+	--fw-600: 600;
+
+	--cl-primary-500: hsl(171, 66%, 44%);
+	--cl-primary-400: hsl(233, 100%, 69%);
+	--bs-primary-500: hsla(171, 66%, 44%, .5);
+	--bs-primary-400: hsla(233, 100%, 69%, .5);
+
+	--cl-neutral-500: hsl(210, 10%, 33%);
+	--cl-neutral-400: hsl(201, 11%, 66%);
+
+}
+
+/* custom properties - END 
+===================== */
+
+
+
+/* ==========
+utility classes */
+
+.container {
+	width: min(85%, 50rem);
+	margin: 0 auto;
+}
+
+.flex {
+	display: flex;
+	flex-direction: column;
+}
+
+/* used when flex-direction is set to column: assigns margin-top to all but the first flex-item inside a flex-container. If no value is given to --flex-spacer than 1rem is used as fallback. */
+.flex>*+* {
+	margin: var(--flex-spacer, 1rem) 0 0 0;
+}
+/* used when default margin values are set to 0 in css reset: assigns margin-top to all but the first element inside a containing block. If no value is given to --flow-spacer than 1rem is used as fallback. */
+.flow>*+* {
+	margin-top: var(--flow-spacer, 1rem);
+}
+/* used in containing blocks where more than one margin-top value is need: assigns a larger margin-top to all but the first element inside a containing block. If no value is given to --flow--lg-spacer than 3.5rem is used as fallback. */
+.flow--lg>*+* {
+	margin-top: var(--flow--lg-spacer, 3.5rem);
+}
+.btn {
+	color: #fff;
+	padding: .75em 5em;
+	border-radius: 100px;
+}
+.btn:hover,
+.btn:focus {
+	opacity: .75;
+}
+
+.btn--ios {
+	background-color: var(--cl-primary-500);
+	box-shadow: 2px 2px var(--bs-primary-500)
+}
+
+.btn--mac {
+	background-color: var(--cl-primary-400);
+	box-shadow: 2px 2px var(--bs-primary-400);
+}
+
+/* utility classes - END 
+================= */
+
+
+
+/* =========
+element styling */
+body {
+	color: var(--cl-neutral-400);
+	font-family: var(--ff-bj);
+	text-align: center;
+}
+
+header {
+	padding: 9rem 0 4.5rem;
+}
+
+section, 
+footer {
+	padding: 4.5rem 0;
+}
+
+p  {
+	max-width: 50ch;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+img {
+	object-fit: contain;
+	/* border: 1px solid red; */
+}
+
+/* element styling - END 
+================ */
+
+
+
+/* =========
+typography */
+h1,
+h2,
+h3 {
+	color: var(--cl-neutral-500);
+	font-weight: var(--fw-600);
+}
+h1 {
+	font-size: var(--fs-600);
+}
+h2 {
+	font-size: var(--fs-500);
+	max-width: 15ch;
+	margin: 0 auto;
+	
+}
+
+/* typography - END 
+================ */
+
+
+/* =========
+section layouts */
+/* header */
+
+.cta-header {
+	--flow-spacer: 2rem;
+	background: url(images/bg-header-mobile.png) no-repeat center center;
+	background-size: cover;
+}
+
+.copyright {
+	color: var(--cl-primary-500);
+	font-family: sans-serif;
+	
+}
+.copyright-header {
+	font-size: 12rem;
+	line-height: 1.1;
+}
+
+.downloads {
+	--flex-spacer: 1.25em;
+align-items: center;
+}
+/* hero */
+
+.sidebar p {
+	max-width: 36ch;
+	margin-left: auto;
+	margin-right: auto;
+}
+/* access-clipboard */
+.access-clipboard {
+--flow-spacer: 1.5rem;
+}
+/* supercharge */
+.supercharge {
+	--flex-spacer: 3.5rem;
+}
+
+.supercharge__list {
+	margin-top: 6.5rem;
+}
+
+.supercharge__list li {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+/* cta */
+.cta {
+	--flow-spacer: 2rem;
+	padding-bottom: 9rem;
+}
+/* footer */
+footer {
+	--flex-spacer: 1.5rem;
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	background-color: #eee;
+}
+
+footer a {
+	color: var(--cl-neutral-500);
+}
+footer a:hover,
+footer a:focus {
+	color: var(--bs-primary-500);
+}
+
+.copyright-footer {
+	font-size: 4rem;
+}
+.footer-links {
+	display: flex;
+	flex-direction: column;
+}
+
+.footer-links div > * {
+	margin: 3rem 0 0 0;
+}
+.footer-social {
+	display: flex;
+	justify-content: space-around;
+}
+
+/* attribution */
+
+
+.attribution {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	font-size: 11px;
+	text-align: center;
+	
+}
+
+.attribution a {
+	color: hsl(228, 45%, 44%);
+}
+
+/* general layout - END 
+================ */
+
+
+
+/* ===========
+media queries
+============= */
+
+@media (min-width: 37.5em) {
+:root {
+	--fs-400: 1.5rem;
+	--fs-500: 1.75rem;
+	--fs-600: 2.5rem;
+}
+
+header {
+	padding: 9rem 0 5.5rem;
+}
+.cta-header {
+	
+	background-image: url(images/bg-header-desktop.png);; 
+}
+section, 
+footer {
+	padding: 5.5rem 0;
+}
+
+	.flex {
+		flex-direction: row;
+	}
+/* used when flex-direction is set to row: assigns margin-left to all but the first flex-item inside a flex-container. If no value is given to --flex-spacer than 1rem is used as fallback. */
+	.flex>*+* {
+		margin: 0 0 0 var(--flex-spacer, 1rem);
+	}
+	.btn {
+		padding: .75em 3em;
+	}
+	.downloads {
+		justify-content: center;
+	}
+
+	.hero img {
+		margin-left: -30vw;
+	}
+	.sidebar {
+		text-align: left;
+		margin-left: 10vw;
+	}
+	.supercharge__list {
+		align-items: baseline;
+	}
+
+	footer {
+		text-align: left;
+	}
+
+	.copyright-footer {
+		line-height: 1;
+	}
+
+	.footer-links {
+		flex-direction: row;	
+	}
+
+	.footer-links div * {
+		margin: 0 0 0 calc(1rem + 1vw);
+	
+	}
+	.footer-social {
+		margin-left: auto;
+	}
+	.footer-social >*+* {
+		margin-left: 2rem;
+	}
+}
+
+
