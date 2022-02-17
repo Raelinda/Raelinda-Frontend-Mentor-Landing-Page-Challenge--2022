@@ -294,15 +294,17 @@ footer a:focus {
 
 .copyright-footer {
 	font-size: 4rem;
+    line-height: 0;
 }
 .footer-links {
 	display: flex;
 	flex-direction: column;
 }
 
-.footer-links div > * {
-	margin: 3rem 0 0 0;
+.footer-links__list > * {
+	margin: 1rem 0 0 0;
 }
+
 .footer-social {
 	display: flex;
 	justify-content: space-around;
@@ -390,7 +392,7 @@ footer {
 		flex-direction: row;	
 	}
 
-	.footer-links div * {
+	.footer-links__list * {
 		margin: 0 0 0 calc(1rem + 1vw);
 	
 	}
